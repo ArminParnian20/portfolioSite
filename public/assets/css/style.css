@@ -1,0 +1,299 @@
+@font-face {
+    font-family: 'Gandom';
+    src: url('Gandom.eot');
+    src: url('Gandom.eot?#iefix') format('embedded-opentype'),
+        url('Gandom.woff2') format('woff2'),
+        url('Gandom.woff') format('woff'),
+        url('Gandom.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    transition: 0.5s;
+    font-family: 'Gandom';
+
+}
+:root{
+    --backgroundColor:#e1e2e2;
+    --fontColor:#1d2228;
+    --boxColor:#fb8122;
+}
+body{
+    background: var(--backgroundColor);
+    max-width:1000px;
+    margin:0 auto;
+    overflow-x: auto;
+}
+nav{
+    max-width:1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:5px 10px;
+    position: fixed;
+    background-color: var(--backgroundColor);
+    z-index:200;
+    left:0;
+    right:0;
+    box-shadow:0 10px 30px rgba(0, 0, 0, 0.3);
+    margin:0 auto;
+}
+nav i{
+    padding:5px;
+    font-size:25px;
+    cursor: pointer;
+    color: var(--fontColor);
+
+}
+nav i:hover{
+    color:var(--boxColor);
+}
+nav img{
+    width:20px;
+    transform: scale(2);
+}
+.setting{
+    max-width: 1000px;
+    margin:0 auto;
+    height:250px;
+    background: var(--boxColor);
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    gap:10px;
+    z-index:250;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+    box-shadow:0 10px 30px rgba(0, 0, 0, 0.3);
+
+}
+.setbtn{
+    padding:5px;
+    border-radius:50%;
+    cursor: pointer;
+    font-weight: 500;
+    
+}
+.setting div i{
+    border:1.5px solid #1d2228;
+    border-radius:3px;
+    cursor: pointer;
+    margin:5px;
+    padding:4px 10px;
+}
+.setting i:hover,.bi-moon-stars.active,
+.bi-sun.active,.bi-filter-right.active,
+.bi-filter-left.active{
+    background:#1d2228;
+    color:var(--boxColor);
+}
+.setting.active{
+    transform:translateY(-100%);
+}
+.setting .color{
+    display: flex;
+    justify-content: center;
+    gap:10px;
+}
+.setting .color span{
+    cursor: pointer;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+  
+}
+.setting .color span.active{
+    border: #1d2228 solid 2px;
+}
+.setting .color span:nth-child(1){background:#fb8122}
+.setting .color span:nth-child(2){background:#00c853}
+.setting .color span:nth-child(3){background:#03a9f4}
+.setting .color span:nth-child(4){background:#d500f9}
+
+.head{
+    display: flex;
+    justify-content:center;
+    align-items:center; 
+    flex-direction: column;
+}
+.head img{
+    border: var(--fontColor) 2px solid;
+    border-radius:50%;
+    width:200px;
+}
+.head img:hover{
+    border-color: var(--boxColor);
+}
+.head h1,.head h2{
+    color: var(--fontColor);
+}
+.InfoBox{
+    width:100%;
+    background-color: var(--boxColor);
+    border-radius: 10px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+    justify-content: center;
+    padding:1rem;
+    gap:20px;
+}
+.InfoBox img{
+    width:90%;
+    margin:0 auto;
+    border-radius:10px;
+}
+.InfoBox ul li::marker{
+    content: "\1f538";
+}
+.InfoBox ul{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap:15px;
+  padding:20px;
+}
+.skill{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.skills{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+.skill > img{
+    width:80%;
+    margin:0.5rem auto;
+    border-radius:5px;
+}
+.skill h1{
+    color:var(--fontColor);
+}
+.cardRange{
+    position: relative;
+    width:250px;
+    height:300px;
+    text-align: center;
+    z-index:10;
+    cursor: pointer;
+    margin:20px 20px 60px;
+}
+.cardRange .box{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--backgroundColor),0.1;
+    box-shadow:0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter:blur(15px);
+    border-radius:10px;
+    z-index: 45;
+}
+.cardRange .precent{
+    position: absolute;
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    z-index:100;
+}
+.cardRange .precent .range{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.precent .range h2{
+    text-align: center;
+     color:var(--fontColor);
+     font-size:50px;
+     font-weight:700;
+}
+.precent .range h2 span{
+    font-size:24px;
+}
+.cardRange .text{
+    position: absolute;
+    bottom:-42px;
+    left:50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding:15px 25px;
+    background-color: var(--boxColor);
+    z-index:102;
+    color: #fff;
+    border-radius: 10px;
+    font-weight:800;
+    font-size:18px;
+    letter-spacing:2px;
+    text-transform: uppercase;
+    box-shadow:0 10px 20px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    transition:bottom 0.5s,z-index 0s,transform 0.5s,padding 0.5s;
+    pointer-events: none;
+    transition-delay:0.5s,0.5s,0s,0.5s;
+}
+.cardRange:hover .text{
+    transition-delay:0s,0.5s,0.5s,0s;
+    bottom:-70px;
+    z-index:101;
+    transform: translateX(-50%) translateY(-50px);
+
+
+}
+svg{
+   position: relative;
+   width:150px;
+   height:150px;
+
+}
+svg circle{
+    width:100%;
+    height:100%;
+    fill:none;
+    stroke-width:10;
+    stroke:rgba(255, 255, 255, 0.5);
+    transform: translate(5px,5px);
+    stroke-linecap: round;
+}
+svg circle:nth-child(2){
+    stroke: var(--boxColor);
+    stroke-dasharray:440px;
+    stroke-dashoffset:calc(440px - (var(--i)/10)*440px);
+}
+.projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.projects h1{
+    color: var(--fontColor);
+}
+.projects > img{
+    width:320px;
+}
