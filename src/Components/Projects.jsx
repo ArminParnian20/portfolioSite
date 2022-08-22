@@ -12,6 +12,11 @@ const Projects = () => {
         <h1>پروژه های من</h1>
         <img src={`./assets/images/${color}p.png`} alt="" />
     </div>
+    <div className="projectCard">
+        <img src="" alt="" />
+        <p></p>
+        <button></button>
+    </div>
     </>  );
 }
  
