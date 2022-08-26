@@ -10,9 +10,12 @@ const Header = () => {
         <br />
         <br />
 
-    <img src={`./assets/images/${color}.gif`} alt="" />
-
-
+        <lord-icon className="img"
+     src="https://cdn.lordicon.com/gqqykmqo.json"
+     trigger="loop"
+     style={{"width":"250px","height":"250px"}}
+     colors={`outline:#121331,primary:#${color},secondary:#ad6836,tertiary:#4faef9,quaternary:#f3c3ba`}>
+           </lord-icon>
     <br/>
         <h1>آرمین پرنیان</h1>
         <br/>

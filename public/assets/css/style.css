@@ -128,12 +128,12 @@ nav img{
     align-items:center; 
     flex-direction: column;
 }
-.head img{
+.head .img{
     border: var(--fontColor) 2px solid;
     border-radius:50%;
     width:200px;
 }
-.head img:hover{
+.head .img:hover{
     border-color: var(--boxColor);
 }
 .head h1,.head h2{
@@ -187,8 +187,8 @@ nav img{
 }
 .cardRange{
     position: relative;
-    width:250px;
-    height:300px;
+    width:150px;
+    height:200px;
     text-align: center;
     z-index:10;
     cursor: pointer;
@@ -204,7 +204,7 @@ nav img{
     align-items: center;
     justify-content: center;
     background: var(--backgroundColor),0.1;
-    box-shadow:0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow:0 10px 30px rgba(0, 0, 0, 0.4);
     backdrop-filter:blur(15px);
     border-radius:10px;
     z-index: 45;
@@ -230,39 +230,30 @@ nav img{
 .precent .range h2{
     text-align: center;
      color:var(--fontColor);
-     font-size:50px;
+     font-size:30px;
      font-weight:700;
 }
 .precent .range h2 span{
-    font-size:24px;
+    font-size:14px;
 }
 .cardRange .text{
     position: absolute;
-    bottom:-42px;
     left:50%;
+    width:100%;
+    bottom:0;
     transform: translateX(-50%);
-    text-align: center;
-    padding:15px 25px;
-    background-color: var(--boxColor);
+    text-align: left;
+    padding:10px 15px;
     z-index:102;
     color: #fff;
     border-radius: 10px;
     font-weight:800;
-    font-size:18px;
+    font-size:12px;
+    background:none;
     letter-spacing:2px;
     text-transform: uppercase;
-    box-shadow:0 10px 20px rgba(0, 0, 0, 0.6);
     z-index: 1;
-    transition:bottom 0.5s,z-index 0s,transform 0.5s,padding 0.5s;
-    pointer-events: none;
-    transition-delay:0.5s,0.5s,0s,0.5s;
-}
-.cardRange:hover .text{
-    transition-delay:0s,0.5s,0.5s,0s;
-    bottom:-70px;
-    z-index:101;
-    transform: translateX(-50%) translateY(-50px);
-
+    color: var(--fontColor);
 
 }
 svg{
@@ -282,8 +273,8 @@ svg circle{
 }
 svg circle:nth-child(2){
     stroke: var(--boxColor);
-    stroke-dasharray:440px;
-    stroke-dashoffset:calc(440px - (var(--i)/10)*440px);
+    stroke-dasharray:314px;
+    stroke-dashoffset:calc(314px - (var(--i)/10)*314px);
 }
 .projects{
     display: flex;
@@ -296,4 +287,49 @@ svg circle:nth-child(2){
 }
 .projects > img{
     width:320px;
+}
+.projectsBox{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:3rem;
+}
+.projectCard{
+    width:300px;
+    height:400px;
+    background-color: var(--boxColor);
+    box-shadow:0 10px 30px rgba(0, 0, 0, 0.4);
+    border-radius:10px;
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.projectCard img{
+    width:100%;
+    border-radius: 5px;
+    box-shadow:0 10px 30px rgba(0, 0, 0, 0.3);
+
+}
+.projectCard > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.projectCard > div a{
+    font-size:30px;
+    color: var(--fontColor);
+    padding:8px 10px;
+    border-radius:10px;
+    cursor: pointer;
+}
+.projectCard > div p{
+    border: 1.5px solid rgba(0, 0, 0, 0.374);
+    padding:5px 8px;
+    border-radius: 5px;
 }
