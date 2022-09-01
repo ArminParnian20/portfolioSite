@@ -16,7 +16,7 @@
     list-style: none;
     -webkit-tap-highlight-color: transparent;
     text-decoration: none;
-    transition: 0.5s;
+    transition: 0.2s;
     font-family: 'Gandom';
 
 }
@@ -31,11 +31,15 @@ body{
     margin:0 auto;
     overflow-x: auto;
 }
+html{
+    scroll-behavior: smooth;
+}
 nav{
     max-width:1000px;
+    height:60px;
     display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items:flex-end;
     padding:10px 15px;
     position: fixed;
     background-color: var(--backgroundColor);
@@ -44,104 +48,112 @@ nav{
     right:0;
     box-shadow:0 10px 30px rgba(0, 0, 0, 0.3);
     margin:0 auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+
+    
 }
 nav i{
-    padding:5px;
-    font-size:25px;
+    font-size:20px;
     cursor: pointer;
     color: var(--fontColor);
-
 }
 nav i:hover{
     color:var(--boxColor);
 }
 nav img{
-    width:20px;
-    transform: scale(2);
+    width:45px;
+    border-radius:50%;
+    box-shadow:0 10px 30px rgba(0, 0, 0, 0.1);
+
+
 }
-.setting{
-    max-width: 1000px;
-    margin:0 auto;
-    height:250px;
-    background: var(--boxColor);
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
+.mode{
+    border: var(--fontColor) 1.6px solid;
+    font-size:15px;
     display: flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction: column;
-    gap:10px;
-    z-index:250;
-    border-bottom-left-radius:10px;
-    border-bottom-right-radius:10px;
+    justify-content:space-between;
+    align-items: center;
+    border-radius:10px;
+    overflow: hidden;
+}
+.mode i{
+    padding: 0 8px;
+    width:100%;
+
+}
+.bi-sun.active,
+.bi-moon-stars.active{
+    color: var(--boxColor);
+    background: var(--fontColor);
+}
+.mode i:nth-child(1){
+    border-left: var(--fontColor) 1.6px solid;
+
+}
+
+.menu2{
+    position: fixed;
+    height:400px;
+    width:50px;
+    background:var(--backgroundColor);
+    top:150px;
+    left:0px;
+    display: flex;
     box-shadow:0 10px 30px rgba(0, 0, 0, 0.3);
+    justify-content: flex-start;
+    border-bottom-right-radius:20px;
+    border-top-right-radius:20px;
+    margin-right:10px;
+
 
 }
-.setbtn{
-    padding:5px;
-    border-radius:50%;
-    cursor: pointer;
-    font-weight: 500;
-    
-}
-.setting div i{
-    border:1.5px solid #1d2228;
-    border-radius:3px;
-    cursor: pointer;
-    margin:5px;
-    padding:4px 10px;
-}
-.setting i:hover,.bi-moon-stars.active,
-.bi-sun.active,.bi-filter-right.active,
-.bi-filter-left.active{
-    background:#1d2228;
-    color:var(--boxColor);
-}
-.setting.active{
-    transform:translateY(-100%);
-}
-.setting .color{
+.menu2 ul{
+    padding:10px;
+    width:50px;
+    height:100%;
     display: flex;
-    justify-content: center;
-    gap:10px;
-}
-.setting .color span{
-    cursor: pointer;
-    width:20px;
-    height:20px;
-    border-radius:50%;
-  
-}
-.setting .color span.active{
-    border: #1d2228 solid 2px;
-}
-.setting .color span:nth-child(1){background:#fb8122}
-.setting .color span:nth-child(2){background:#00c853}
-.setting .color span:nth-child(3){background:#03a9f4}
-.setting .color span:nth-child(4){background:#d500f9}
-
-.head{
-    display: flex;
-    justify-content:center;
-    align-items:center; 
     flex-direction: column;
-}
-.head .img{
-    border: var(--fontColor) 2px solid;
-    border-radius:50%;
-    width:200px;
-}
-.head .img:hover{
-    border-color: var(--boxColor);
-}
-.head h1,.head h2{
+    justify-content: space-evenly;
+    align-items: center;
     color: var(--fontColor);
+}
+.menu2 ul li{
+    padding:5px;
+    cursor: pointer;
+    font-size:20px;
+    width:35px;
+    height:35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight:bolder;
+
+}
+.menu2 ul li:hover{
+    color: var(--boxColor);
+}
+.menu2 ul li img{
+    width:150%;
+}
+.head{
+    width:calc(100% - 50px);
+    min-height: 70vh;
+    padding:20px;
+    padding-top:4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.head img{
+    width:80%;
 }
 .InfoBox{
     width:100%;
-    background-color: var(--boxColor);
     border-radius: 10px;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
@@ -161,177 +173,36 @@ nav img{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap:15px;
+  gap:10px;
   padding:40px;
-}
-.skill{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.skills{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-top:4.5rem;
-
-}
-.skills::after{
-    content:'مهارت ها';
-    text-align: center;
-    font-size: 30px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:100%;
-    height:150px;
-    background: var(--boxColor);
-    top:-100px;
-    border-radius: 5px;
-}
-.skill > img{
-    width:80%;
-    margin:0.5rem auto;
-    border-radius:5px;
-}
-
-.cardRange{
-    position: relative;
-    width:150px;
-    height:200px;
-    text-align: center;
-    z-index:10;
-    cursor: pointer;
-    margin:20px 20px 60px;
-}
-.cardRange .box{
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--backgroundColor),0.1;
-    box-shadow:0 10px 30px rgba(0, 0, 0, 0.4);
-    backdrop-filter:blur(15px);
-    border-radius:10px;
-    z-index: 45;
-}
-.cardRange .precent{
-    position: absolute;
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    z-index:100;
-}
-.cardRange .precent .range{
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.precent .range h2{
-    text-align: center;
-     color:var(--fontColor);
-     font-size:30px;
-     font-weight:700;
-}
-.precent .range h2 span{
-    font-size:14px;
-}
-.cardRange .text{
-    position: absolute;
-    left:50%;
-    width:100%;
-    bottom:0;
-    transform: translateX(-50%);
-    text-align: left;
-    padding:10px 15px;
-    z-index:102;
-    color: #fff;
-    border-radius: 10px;
-    font-weight:800;
-    font-size:12px;
-    background:none;
-    letter-spacing:2px;
-    text-transform: uppercase;
-    z-index: 1;
-    color: var(--fontColor);
-
-}
-svg{
-   position: relative;
-   width:150px;
-   height:150px;
-
-}
-svg circle{
-    width:100%;
-    height:100%;
-    fill:none;
-    stroke-width:10;
-    stroke:rgba(255, 255, 255, 0.5);
-    transform: translate(5px,5px);
-    stroke-linecap: round;
-}
-svg circle:nth-child(2){
-    stroke: var(--boxColor);
-    stroke-dasharray:314px;
-    stroke-dashoffset:calc(314px - (var(--i)/10)*314px);
-}
-.projects{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.projects h1{
-    color: var(--fontColor);
-}
-.projects > img{
-    width:320px;
-}
-.projectsBox{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    width:100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap:3rem;
-}
-.projectSwiper{
-    width:380px;
-    margin:3rem 0;
-    height:450px;
+  color: var(--fontColor);
 }
 .projectCard{
-    width:80%;
+    width:300px;
     height:400px;
     margin:0 auto;
-    background-color: var(--boxColor);
+    background-color: var(--backgroundColor);
     border-radius:10px;
-    padding:15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom:1rem;
+    box-shadow:0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+
 
 }
-.projectCard img{
+.projectCard .img{
+    height:300px;
     width:100%;
+    background: var(--boxColor);
+    border-bottom-left-radius:30px;
+    border-bottom-right-radius:30px;
+
+}
+.projectCard .img img{
+    width:90%;
+    margin:0 auto;
     border-radius: 5px;
     box-shadow:0 10px 30px rgba(0, 0, 0, 0.3);
 
@@ -340,6 +211,7 @@ svg circle:nth-child(2){
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding:10px;
 }
 .projectCard > div a{
     font-size:30px;
@@ -349,7 +221,8 @@ svg circle:nth-child(2){
     cursor: pointer;
 }
 .projectCard > div p{
-    border: 1.5px solid rgba(0, 0, 0, 0.374);
+    border: 1.5px solid var(--fontColor);
+    color:var(--fontColor);
     padding:5px 8px;
     border-radius: 5px;
 }

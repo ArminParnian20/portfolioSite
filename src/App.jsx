@@ -1,22 +1,16 @@
-import Header from './Components/Header';
 import Menu from './Components/Menu';
 import { useState } from 'react';
 import { context } from './context/context';
-import Skills from './Components/Skills';
-import Projects from './Components/Projects';
-
+import Menu2 from './Components/Menu2';
+import Header from './Components/Header';
 const App = () => {
-  const [dark,setDark]=useState(false);
-  const [ltr,setLtr]=useState(true);
-  const [color,setColor]=useState("fb8122");
-  
+  const [dark,setDark]=useState(false);  
     return (
     <context.Provider
-    value={{dark,setDark,color,setColor,ltr,setLtr}}>
+    value={{dark,setDark}}>
       <Menu/>
+      <Menu2/>
       <Header/>
-      <Skills/>
-      <Projects/>
     </context.Provider>
    );
 }
