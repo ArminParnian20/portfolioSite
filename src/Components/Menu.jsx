@@ -6,7 +6,7 @@ const Menu = () => {
     const {dark,setDark}=useContext(context)
     const [state,setState]=useState(true);
     return ( <>
-    <nav id="#nav">
+    <nav>
          <img src="/assets/images/me.jpg" alt="" />
          <div className="mode">
         <i className={dark ? 'bi bi-moon-stars active':'bi bi-moon-stars'} onClick={()=>{document.documentElement.style.setProperty("--backgroundColor","#1d2228");
