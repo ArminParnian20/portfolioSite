@@ -8,9 +8,7 @@ const Menu2 = () => {
                 <li><NavLink to="/" style={({isActive})=>({color:isActive? "var(--boxColor)":"var(--fontColor)"})}><i className="bi bi-house"></i></NavLink></li>
                 <li><NavLink to="/head" style={({isActive})=>({color:isActive? "var(--boxColor)":"var(--fontColor)"})} ><i className="bi bi-card-heading"></i></NavLink></li>
                 <li><NavLink to="/skill" style={({isActive})=>({color:isActive? "var(--boxColor)":"var(--fontColor)"})} ><i className="bi bi-file-earmark-code"></i></NavLink></li>
-                <li><NavLink to="/project" style={({isActive})=>({color:isActive? "var(--boxColor)":"var(--fontColor)"})}><i className="bi bi-folder"></i></NavLink></li>
-                <li><NavLink to="/call" style={({isActive})=>({color:isActive? "var(--boxColor)":"var(--fontColor)"})} ><i className="bi bi-telephone"></i></NavLink></li>
-         
+                <li><NavLink to="/project" style={({isActive})=>({color:isActive? "var(--boxColor)":"var(--fontColor)"})}><i className="bi bi-folder"></i></NavLink></li>         
             </ul>
         </div>
     </> );

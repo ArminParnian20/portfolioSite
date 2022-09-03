@@ -1,5 +1,10 @@
+import { useState } from 'react';
+import Loader from './Loader';
 const Home = () => {
+    const [state,setState]=useState(false)
+    setTimeout(()=>setState(true),1000)
     return ( <>
+    {state ? <div>
 
     <div className="context">
         <h1>Armin Parnian</h1>
@@ -26,6 +31,8 @@ const Home = () => {
 
             </ul>
     </div >
+</div>:<Loader/>}
+
     </> );
 }
  

@@ -209,7 +209,7 @@ nav img{
 
 }
 .projectCard .img img{
-    width:90%;
+    width:100%;
     margin:0 auto;
     border-radius: 5px;
     box-shadow:0 10px 30px rgba(0, 0, 0, 0.3);
@@ -232,7 +232,7 @@ nav img{
     border: 1.5px solid var(--fontColor);
     color:var(--fontColor);
     padding:2px 5px;
-    font-size:15px;
+    font-size:14px;
     border-radius: 5px;
 }
 
@@ -485,7 +485,67 @@ svg circle:nth-child(2){
     }
 
 }
-
+.loaderBox{
+    width: calc(100% - 50px);
+    height:90vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader{
+    position: relative;
+    width:3em;
+    height:3em;
+    transform: rotate(165deg);}
+  .loader::after,.loader::before{
+      content:'';
+      position: absolute;
+      top:50%;
+      left:50%;
+      display: block;
+      width:0.6em;
+      height:0.6em;
+      border-radius:0.3em;
+      transform:translate(-50%,-50%);}
+  .loader::before{
+      animation:anim1 2s infinite;}
+  .loader::after{
+      animation:anim2 2s infinite;}
+  
+  
+  
+  
+  @keyframes anim1{
+      0%{width:0.6em;
+         box-shadow:1em -0.6em #d500f9,
+                   -1em 0.6em #29b6f6;}
+      35%{width:3em;
+          box-shadow:0em -0.6em #d500f9,
+                    0em 0.6em #29b6f6;}
+      70%{width:0.6em;
+          box-shadow:-1em -0.6em #d400f972,
+                    1em 0.6em #29b6f6;}
+      100%{
+          box-shadow:1em -0.6em #d500f9,
+                    -1em 0.6em #29b6f6;}}
+  @keyframes anim2{
+      0%{height:0.6em;
+         box-shadow:0.6em 1em #00e676,
+                   -0.6em -1em  #ffff00}
+      35%{height:3em;
+          box-shadow:0.6em 0em #00e676,
+                    -0.6em 0em  #ffff00}
+      70%{height:0.6em;
+          box-shadow:0.6em -1em #00e676,
+                    -0.6em 1em  #ffff00}
+      100%{box-shadow:0.6em 1em #00e676,
+                    -0.6em -1em #ffff00}
+                  }
+  
+  
+  
+  
+  
 @media screen and (max-width:450px) {
     .context h1{
         font-size:35px;

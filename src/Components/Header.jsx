@@ -1,6 +1,10 @@
+import { useState } from 'react';
+import Loader from './Loader';
 const Header = () => {
+    const [state,setState]=useState(false)
+    setTimeout(()=>setState(true),1000)
     return (  <>
-    <div className="head">
+    {state ? <div className="head">
           <div className="InfoBox">
 <ul>
     <li>آرمین پرنیان </li>
@@ -10,7 +14,8 @@ const Header = () => {
 </ul>
 </div>
           <img src="/assets/images/fb8122p.png" alt="" />  
-    </div>
+    </div>:<Loader/>}
+    
     </>);
 }
  

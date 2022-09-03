@@ -1,9 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Loader from "./Loader";
 
 const Project = () => {
-    useEffect(()=>window.scroll(0,0),[])
+    useEffect(()=>window.scroll(0,0),[]);
+    const [state,setState]=useState(false)
+    setTimeout(()=>setState(true),1000)
     return ( <>/
-      <h1>پروژه های من</h1>
+   {state?  <div>
+    <h1>پروژه های من</h1>
       <div className="projects">
 
 <div className="projectCard">
@@ -34,6 +38,8 @@ const Project = () => {
     </div>
 </div>
       </div>
+    </div>:<Loader/>}
+    
     </> );
 }
  
